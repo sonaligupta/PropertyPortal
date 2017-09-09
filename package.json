@@ -1,5 +1,5 @@
 {
-  "name": "meanjs",
+  "name": "propertyportal",
   "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
   "version": "0.5.0",
   "meanjs-version": "0.5.0",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meanjs/mean.git"
+    "url": "git+https://github.com/meanjs/mean.git"
   },
   "engines": {
     "node": ">=6.10.0",
@@ -110,5 +110,10 @@
     "semver": "~5.4.1",
     "should": "~11.2.1",
     "supertest": "~3.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/meanjs/mean/issues"
+  },
+  "homepage": "https://github.com/meanjs/mean#readme",
+  "main": ".eslintrc.js"
 }
