@@ -46,11 +46,18 @@
     </section>
   </section>
 
+  <section class="content">
+    <section class="home">
+      {{{block "content"}}}
+    </section>
+  </section>
+
   <noscript>
     <style>
       [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
         display: block !important;
       }
+      .home{width:100%;max-width:2520px;}
     </style>
     <div class="alert alert-warning">
       <strong>This page requires JavaScript.</strong> Please enable it in your browser.
@@ -68,7 +75,7 @@
 
   <!--Application JavaScript Files-->
     {{#each jsFiles}}<script type="text/javascript" src="/{{this}}"></script>{{/each}}
-  
+
   <!--owasp config sync-->
   <script type="text/javascript">
     var sharedConfig = {{{ sharedConfig }}};
