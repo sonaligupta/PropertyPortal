@@ -57,6 +57,24 @@
           pageTitle: 'Settings picture'
         }
       })
+      .state('settings.package', {
+        url: '/package',
+        templateUrl: '/modules/users/client/views/settings/package-selection.client.view.html',
+        controller: 'PackageSelectionController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Settings package'
+        }
+      })
+      .state('settings.payment', {
+        url: '/payment',
+        templateUrl: '/modules/users/client/views/settings/payment.client.view.html',
+        controller: 'PaymentController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Settings payment'
+        }
+      })
       .state('authentication', {
         abstract: true,
         url: '/authentication',
