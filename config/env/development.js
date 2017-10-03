@@ -5,7 +5,10 @@ var defaultEnvConfig = require('./default');
 module.exports = {
   db: {
     uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/PropertyPortal',
-    options: {},
+    options: {
+      user: '',
+      pass: ''
+    },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
   },
@@ -25,8 +28,8 @@ module.exports = {
     title: defaultEnvConfig.app.title + ' - Development Environment'
   },
   facebook: {
-    clientID: process.env.FACEBOOK_ID || 'APP_ID',
-    clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+    clientID: process.env.FACEBOOK_ID || '709418999253305',
+    clientSecret: process.env.FACEBOOK_SECRET || '938e819cde9411fc6652e58a911fbc7c',
     callbackURL: '/api/auth/facebook/callback'
   },
   twitter: {
@@ -36,8 +39,8 @@ module.exports = {
     callbackURL: '/api/auth/twitter/callback'
   },
   google: {
-    clientID: process.env.GOOGLE_ID || 'APP_ID',
-    clientSecret: process.env.GOOGLE_SECRET || 'APP_SECRET',
+    clientID: process.env.GOOGLE_ID || '245039531901-o0qqto5f523pe0go2rm7n1qjia422q95.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'et5qu0jVNZ6UdRjB37QFQMC3',
     callbackURL: '/api/auth/google/callback'
   },
   linkedin: {
@@ -72,9 +75,6 @@ module.exports = {
     options: {
       logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false'
     },
-    // Order of collections in configuration will determine order of seeding.
-    // i.e. given these settings, the User seeds will be complete before
-    // Article seed is performed.
     collections: [{
       model: 'User',
       docs: [{
@@ -86,10 +86,6 @@ module.exports = {
           roles: ['admin', 'user']
         }
       }, {
-        // Set to true to overwrite this document
-        // when it already exists in the collection.
-        // If set to false, or missing, the seed operation
-        // will skip this document to avoid overwriting it.
         overwrite: true,
         data: {
           username: 'local-user',

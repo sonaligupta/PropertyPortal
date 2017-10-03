@@ -2,9 +2,9 @@
 
 module.exports = {
   app: {
-    title: 'MEAN.JS',
-    description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-    keywords: 'mongodb, express, angularjs, node.js, mongoose, passport',
+    title: 'Property Portal',
+    description: 'Online Property listing housing rent buy and sell all over the world!',
+    keywords: 'Rent Buy Or sell Houses with one click.',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   db: {

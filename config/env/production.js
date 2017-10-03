@@ -81,7 +81,7 @@ module.exports = {
   mailer: {
     from: process.env.MAILER_FROM || 'Property Portal',
     options: {
-      service: process.env.MAILER_SERVICE_PROVIDER || 'gmail.com',
+      service: process.env.MAILER_SERVICE_PROVIDER || 'gmail',
       auth: {
         user: process.env.MAILER_EMAIL_ID || 'tempualbanyse@gmail.com',
         pass: process.env.MAILER_PASSWORD || 'tempualbanyse8'
@@ -91,19 +91,25 @@ module.exports = {
   seedDB: {
     seed: process.env.MONGO_SEED === 'true',
     options: {
-      logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false'
-    },
-    collections: [{
-      model: 'User',
-      docs: [{
-        data: {
-          username: 'local-admin',
-          email: 'admin@localhost.com',
-          firstName: 'Admin',
-          lastName: 'Local',
-          roles: ['admin', 'user']
-        }
-      }]
-    }]
+      logResults: process.env.MONGO_SEED_LOG_RESULTS !== 'false',
+      seedUser: {
+        username: process.env.MONGO_SEED_USER_USERNAME || 'seeduser',
+        provider: 'local',
+        email: process.env.MONGO_SEED_USER_EMAIL || 'user@localhost.com',
+        firstName: 'User',
+        lastName: 'Local',
+        displayName: 'User Local',
+        roles: ['user']
+      },
+      seedAdmin: {
+        username: process.env.MONGO_SEED_ADMIN_USERNAME || 'seedadmin',
+        provider: 'local',
+        email: process.env.MONGO_SEED_ADMIN_EMAIL || 'admin@localhost.com',
+        firstName: 'Admin',
+        lastName: 'Local',
+        displayName: 'Admin Local',
+        roles: ['user', 'admin']
+      }
+    }
   }
 };
